@@ -26,7 +26,6 @@ const submitCode = async (req,res)=>{
        const problem =  await Problem.findById(problemId);
     //    testcases(Hidden)
     
-    //   Kya apne submission store kar du pehle....
     const submittedResult = await Submission.create({
           userId,
           problemId,
@@ -36,7 +35,7 @@ const submitCode = async (req,res)=>{
           testCasesTotal:problem.hiddenTestCases.length
      })
 
-    //    Judge0 code ko submit karna hai
+    
     
     const languageId = getLanguageById(language);
    
